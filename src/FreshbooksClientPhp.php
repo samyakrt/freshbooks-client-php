@@ -39,6 +39,7 @@ class FreshbooksClientPhp{
             
             return $this->getResponse($response);         
         } catch (Exception $e) {
+
             return $this->responseBuilder->errors($e);
         }
     }
@@ -63,8 +64,10 @@ class FreshbooksClientPhp{
                                 "currency_code" => $input['currency_code'],
                             ]
                         ]);
+
             return $res->json()['response']['result']['client'];            
         } catch (Exception $e) {
+
             return $this->responseBuilder->errors($e);
         }
     }
@@ -83,15 +86,16 @@ class FreshbooksClientPhp{
                     ]
                 ]
             ]);
+
             return $this->getResponse($response);         
         } catch (Exception $e) {
+
             return $this->responseBuilder->errors($e);
         }
     }
 
     public function invoiceCreate($input =[]){
         try {
-
             $response = Http::withHeaders($this->headers)
                 ->post('https://api.freshbooks.com/accounting/account/' . $this->businessId .'/invoices/invoices',[
                 "invoice" =>  [     
@@ -114,8 +118,10 @@ class FreshbooksClientPhp{
                     ]
                 ]
             ]);
+
             return $this->getResponse($response); 
         } catch (Exception $e) {
+
             return $this->responseBuilder->errors($e);
         }
     }
@@ -137,8 +143,10 @@ class FreshbooksClientPhp{
                         "action_email" =>  true
                     ]
             ]);
+
             return $this->getResponse($response); 
         } catch (Exception $e) {
+
             return $this->responseBuilder->errors($e);
         }
     }
@@ -152,8 +160,10 @@ class FreshbooksClientPhp{
                                 "vis_state" => 1
                             ]
             ]);
+
             return $response->json();
         } catch (Exception $e) {
+
             return $this->responseBuilder->errors($e);
         }
     }
@@ -162,6 +172,7 @@ class FreshbooksClientPhp{
         $response = Http::withHeaders($this->headers)
             ->get('https://api.freshbooks.com/accounting/account/' . $this->businessId .
             '/invoices/invoices/'. $invoice_id .'/share_link?share_method=share_link');
+
         return $this->getResponse($response);
     }
 
@@ -169,6 +180,7 @@ class FreshbooksClientPhp{
         $response = Http::withHeaders(Arr::add($this->headers,'Accept', 'application/pdf'))
             ->get('https://api.freshbooks.com/accounting/account/' . $this->businessId .
             '/invoices/invoices/'. $invoice_id .'/pdf');
+
         return $this->getResponse($response);
     }
 
@@ -178,15 +190,20 @@ class FreshbooksClientPhp{
             '/invoices/invoices/'. $invoice_id .'/pdf');
         if($response->ok()){
             Storage::put('Invoice #' . $invoice_id. '.pdf', $response);
+
             return Storage::path('Invoice #' . $invoice_id. '.pdf');
         }else{
+
             return $response->json()['response']['errors'];
         }
     }
+    
     public function getResponse($response){
         if($response->ok()){
+
             return $response->json()['response']['result'];
         }else{
+
             return $response->json()['response']['errors'];
         }
     }

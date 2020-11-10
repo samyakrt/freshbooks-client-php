@@ -55,8 +55,8 @@ class FreshbooksClientPhpServiceProvider extends ServiceProvider
 
         // Register the main class to use with the facade
         $this->app->singleton('freshbooks-client-php', function () {
+            
             return new FreshbooksClientPhp;
         });
-        
     }
 }
