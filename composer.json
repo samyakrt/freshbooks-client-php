@@ -1,0 +1,54 @@
+{
+    "name": "sabinks/freshbooks-client-php",
+    "description": "Simple Freshbooks Wrapper PHP",
+    "keywords": [
+        "sabinks",
+        "freshbooks-client-php"
+    ],
+    "homepage": "https://github.com/sabinks/freshbooks-client-php",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Sabin Kumar Shresth",
+            "email": "sabin.kr.stha@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.2.5",
+        "illuminate/support": "^7.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^4.0",
+        "phpunit/phpunit": "^8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Sabinks\\FreshbooksClientPhp\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Sabinks\\FreshbooksClientPhp\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Sabinks\\FreshbooksClientPhp\\FreshbooksClientPhpServiceProvider"
+            ],
+            "aliases": {
+                "FreshbooksClientPhp": "Sabinks\\FreshbooksClientPhp\\FreshbooksClientPhpFacade"
+            }
+        }
+    }
+}
