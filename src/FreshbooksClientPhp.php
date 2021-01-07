@@ -67,7 +67,7 @@ class FreshbooksClientPhp{
             'item' => [
                 'name' => $input['description'],
                 'qty' => 1,
-                'description' => $input['description'] ?? 'Untitled Job',
+                // 'description' => $input['description'] ?? 'Untitled Job',
                 "sku" => $input['id'],
                 'unit_cost' => [
                     'amount' => $input['amount'],
@@ -97,7 +97,7 @@ class FreshbooksClientPhp{
                 [ 
                     'name' => $input['product']['product']['name'],
                     'qty' => 1,
-                    'description' => $input['product']['product']['description'],
+                    // 'description' => $input['product']['product']['description'],
                     "sku" => $input['product']['product']['id'],
                     "vis_state" => $input['product']['product']['vis_state'],
                     'unit_cost' => [
