@@ -41,8 +41,7 @@ If you discover any security related issues, please email sabin.kr.stha@gmail.co
 
 ## Credits
 
-- [Sabin Kumar Shresth](https://github.com/sabinks)
-- [All Contributors](../../contributors)
+- [Samyak Tuladhar](https://github.com/samyakrt)
 
 ## License
 
