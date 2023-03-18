@@ -1,8 +1,9 @@
 <?php
 
-namespace Sabinks\FreshbooksClientPhp;
+namespace Samyakrt\FreshbooksClientPhp;
 
 use Carbon\Carbon;
+use Exception;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Auth;

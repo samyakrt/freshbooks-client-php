@@ -1,6 +1,6 @@
 <?php
 
-namespace Sabinks\FreshbooksClientPhp;
+namespace Samyakrt\FreshbooksClientPhp;
 
 use Illuminate\Support\Facades\Facade;
 

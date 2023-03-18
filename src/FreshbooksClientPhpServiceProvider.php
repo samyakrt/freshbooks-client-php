@@ -1,9 +1,9 @@
 <?php
 
-namespace Sabinks\FreshbooksClientPhp;
+namespace Samyakrt\FreshbooksClientPhp;
 
 use Illuminate\Support\ServiceProvider;
-use Sabinks\FreshbooksClientPhp\FreshbooksClientPhp;
+use Samyakrt\FreshbooksClientPhp\FreshbooksClientPhp;
 
 class FreshbooksClientPhpServiceProvider extends ServiceProvider
 {
